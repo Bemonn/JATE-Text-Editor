@@ -1,6 +1,6 @@
 import { openDB } from 'idb';
 
-const initdb = async () =>
+const initdb = async () => 
   openDB('jate', 1, {
     upgrade(db) {
       if (db.objectStoreNames.contains('jate')) {
@@ -12,10 +12,22 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
-export const putDb = async (content) => console.error('putDb not implemented');
+export const putDb = async (content) => {
+  const db = await initdb();
+  const tx = db.transaction('jate', 'readwrite');
+  const store = tx.objectStore('jate');
+  await store.put({ content: content });
+  console.log('Data stored in IndexedDB');
+};
 
-// TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => console.error('getDb not implemented');
+export const getDb = async () => {
+  const db = await initdb();
+  const tx = db.transaction('jate', 'readonly');
+  const store = tx.objectStore('jate');
+  const allEntries = await store.getAll();
+  if (allEntries.length) {
+    return allEntries[allEntries.length - 1].content;
+  }
+};
 
 initdb();
