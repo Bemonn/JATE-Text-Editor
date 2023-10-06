@@ -25,7 +25,7 @@ JATE Text Editor is a PWA (Progressive Web Application) text editor that gives u
 1. NPM install in the package.json files, this will give the excluded node modules.
 2. After dependencies have been installed run `npm run build` on the intergrated terminal in `webpack.config.js` to generate the dist folder with the following contents:
 
-
+![image](https://github.com/Bemonn/Text-Editor/assets/132788160/4efc6838-4eb4-49e8-acc4-3054f5e23d7a) 
 
 
 ## Live Server
@@ -38,12 +38,12 @@ To use locally:
 1. Ensure that [Installation](#installation) has been done correctly.
 2. Open intergrated terminal on `server.js` and run `npm start`
 
-
+![image](https://github.com/Bemonn/Text-Editor/assets/132788160/e86322a6-de41-4dd0-8bd8-83d8b550c35e) 
 
 To use offline:
 - Use the [Live Server](#Live-Server) and download the text editor OR install and download from a local server.
 
-
+![texteditor](https://github.com/Bemonn/Text-Editor/assets/132788160/e29c25f4-0666-453a-86e1-6538acde7884)
 
   
 ## Contributing
